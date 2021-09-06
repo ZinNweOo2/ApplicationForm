@@ -1,0 +1,425 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+.content {
+    width: 1000px;
+    margin: 0 auto;
+    font-family: 'Meiryo-R';
+    border: 3px solid #cccccc;
+    padding-bottom: 10px;
+}
+
+.clearFix::after {
+    content: "";
+    clear: both;
+    display: block;
+    visibility: hidden;
+    font-size: 0;
+    height: 0;
+}
+
+.header {
+    background-color: #6d9eeb;
+    padding: 5px 0 5px 0;
+    margin-bottom: 1px;
+    font-family: 'Meiryo-R';
+}
+
+.header h2 {
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Meiryo-R';
+    padding-bottom: 9px;
+}
+
+.ttl {
+    background-color: #fce5cd;
+    padding: 1px 0 1px 7px;
+    margin-bottom: 1px;
+    font-family: 'Meiryo-R';
+}
+
+.ttl h3 {
+    color: #807569;
+    font-size: 18px;
+    padding-bottom: 7px;
+}
+
+table {
+    width: 100%;
+    font-family: 'Meiryo-R';
+}
+
+th {
+    width: 40%;
+    text-align: left;
+    padding-left: 5px;
+    color: #444444;
+    font-size: 16px;
+    font-family: 'Meiryo-R';
+    background-color: #f3f3f3;
+    border-bottom: 1px solid #ffffff;
+}
+
+td {
+    width: 60%;
+    font-family: 'Meiryo-R';
+    background-color: #ffffff;
+}
+
+.name {
+    padding-left: 7px;
+}
+
+.name-txt {
+    width: 591px;
+    border: 1px solid #cccccc;
+    font-family: 'Meiryo-R';
+    height: 25px;
+}
+
+.upt-btn {
+    width: 40%;
+    border: 2px solid #cccccc;
+    background-color: #cfe2f3;
+}
+
+.dob {
+    border: 2px solid #cccccc;
+    padding-right: 2px;
+    margin-bottom: 2px;
+    margin-top: 3px;
+    font-family: 'Meiryo-R';
+    font-size: 18px;
+}
+
+.ph-txt {
+    width: 99%;
+    border: 1px solid #cccccc;
+    height: 25px;
+    margin-top: 1px;
+}
+
+.ph {
+    border: 1px solid #cccccc;
+    padding-bottom: 5px;
+}
+
+.data_phone {
+    border: 1px solid#cccccc;
+    padding-bottom: 3px;
+    margin-top: 1px;
+}
+
+.add-txt {
+    width: 591px;
+    height: 60px;
+    border: 1px solid #cccccc;
+}
+
+.bdr {
+    background-color: #cfe2f3;
+    border-radius: 2px;
+    border: none;
+    width: 100%;
+}
+
+.heading {
+    padding: 2px 0 2px 5px;
+    display: block;
+}
+
+.list {
+    margin-left: -42px;
+    margin-top: -3px;
+}
+
+ul {
+    display: flex;
+}
+
+li {
+    list-style: none;
+    padding-left: 2px;
+}
+
+.uni {
+    border: 2px solid #cccccc;
+    padding-bottom: 5px;
+}
+
+.bdr1 {
+    background-color: #cfe2f3;
+    border-radius: 2px;
+    border: none;
+    margin-left: 40px;
+}
+
+.list1 {
+    margin-left: 0px;
+    margin-top: -5px;
+}
+
+.job {
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+}
+
+.lan {
+    border: 2px solid #cccccc;
+    padding-bottom: 5px;
+    margin-bottom: 1px;
+    color: #999999;
+}
+
+.lvl {
+    width: 20%;
+    border: 2px solid #cccccc;
+    padding-bottom: 5px;
+    color: #999999;
+    margin-bottom: 1px;
+}
+
+.lvl1 {
+    width: 10.8%;
+    border: 2px solid #cccccc;
+    padding-bottom: 5px;
+    color: #999999;
+    margin-bottom: 1px;
+    margin-left: -2px;
+}
+
+.sub {
+    background-color: #6d9eeb;
+    margin-top: 18px;
+    margin-left: -135px;
+    padding-top: 3px;
+    padding-right: 9px;
+    text-align: center;
+}
+
+.skill {
+    border: 2px solid #cccccc;
+    padding-bottom: 5px;
+    margin-bottom: 1px;
+    color: #999999;
+    margin-top: -20px;
+    position: absolute;
+}
+
+.skill1 {
+    padding-bottom: 10px;
+}
+
+.level_item {
+    margin-left: -180px;
+}
+
+.bdr01 {
+    background-color: #cfe2f3;
+    border-radius: 2px;
+    border: none;
+    margin-top: 11px;
+}
+
+.pls {
+    background-color: #ffffff;
+    margin-left: 1px;
+    margin-top: 1px;
+    position: absolute;
+    color: #cccccc;
+    cursor: pointer;
+}
+
+.pls:hover {
+    background-color: #6d9eeb;
+}
+
+.pls1:hover {
+    background-color: #6d9eeb;
+}
+
+.pls1 {
+    background-color: #ffffff;
+    margin-left: 1px;
+    margin-top: 2px;
+    position: absolute;
+    color: #cccccc;
+}
+
+.lan-skill {
+    position: absolute;
+    width: 389px;
+    padding-bottom: 135px;
+}
+
+.reset {
+    background-color: #6d9eeb;
+    padding: 5px 20px 5px 20px;
+    margin: 50px 20px 30px 390px;
+}
+
+.submit {
+    background-color: #6d9eeb;
+    padding: 4px 17px 4px 17px;
+    margin: 30px 20px 30px 0px;
+}
+
+.minus {
+    margin-left: 3px;
+    color: #ffffff;
+    padding: 0px 3px 0px 3px;
+    border: 1px solid #cccccc;
+    background-color: #cccccc;
+    height: 15px;
+}
+
+.minus:hover {
+    background-color: #6d9eeb;
+}
+
+.lvl-min:hover {
+    background-color: #6d9eeb;
+}
+
+.lvl-min {
+    margin-top: 1px;
+    color: #ffffff;
+    padding: 0px 2px 0px 2px;
+    border: 1px solid #cccccc;
+    background-color: #cccccc;
+    height: 15px;
+}
+
+.chk {
+    display: none;
+}
+
+.chk1 {
+    padding-right: 360px;
+}
+
+.err-msg {
+    color: rgb(228, 30, 30);
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.err-icn {
+    color: rgb(228, 30, 30);
+    font-size: 16px;
+    font-weight: bold;
+    float: right;
+    margin-right: 70px;
+    margin-top: -20px;
+}
+
+.picture {
+    float: right;
+    right: 2%;
+}
+
+.content-cv {
+    width: 1000px;
+    margin: 0 auto;
+    font-family: 'Meiryo-R';
+}
+
+.side {
+    margin-bottom: 0px;
+}
+
+.left-side {
+    float: left;
+    margin-left: 60px;
+    margin-top: 20px;
+}
+
+span {
+    padding-right: 5px;
+    color: rgb(82, 53, 42);
+}
+
+.right-side {
+    float: right;
+}
+
+.boder {
+    border: 3px solid #cccccc;
+}
+
+.cv-form {
+    font-family: 'Meiryo-R';
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+.edu-cv {
+    margin-top: 10px;
+    font-size: 20px;
+    font-family: 'Meiryo-R';
+    font-weight: bold;
+    padding-left: 80px;
+    margin-bottom: 10px;
+    color: rgb(82, 53, 42);
+}
+
+.bch {
+    font-family: 'Meiryo-R';
+    font-size: 20px;
+}
+
+.info {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Meiryo-R';
+    padding-left: 90px;
+    color: rgb(82, 53, 42);
+}
+
+.exp {
+    padding-left: 100px;
+    font-size: 16px;
+    font-family: 'Meiryo-R';
+}
+
+.cv-btn {
+    margin-left: 150px;
+}
+
+.cv-bdr {
+    border: none;
+}
+
+.col {
+    border-bottom: 1px solid #cccccc;
+}
+
+.suc-form {
+    text-align: center;
+    color: #6d9eeb;
+    font-size: 50px;
+}
+
+.link {
+    margin-left: 560px;
+    margin-top: 30px;
+    font-size: 20px;
+    background-color: #6d9eeb;
+}
