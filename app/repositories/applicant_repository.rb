@@ -2,8 +2,8 @@ class ApplicantRepository
       # @return [<Type>] <users>
     class << self
 
-      def saveObjs(form)
-        @is_save_form = form.save
+      def saveObjs(applicant)
+        @is_save_form = applicant.save
       end
     end
 end

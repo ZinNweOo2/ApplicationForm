@@ -25,7 +25,6 @@ class ApplicantController < ApplicationController
       else
         render :form
       end
-
   end
   
   def save
@@ -50,18 +49,19 @@ class ApplicantController < ApplicationController
       @master_graduate_year= params[:applicant][:master_graduate_year]
       @master_degree= params[:applicant][:master_degree]
       @deploma_name= params[:applicant][:deploma_name]
-      @certificate= params[:applicant][:certificate]
-      @english= params[:applicant][:english]
-      @japan = params[:applicant][:japan]
-      @other = params[:applicant][:other]
+      @certificate= params[:applicant][:certificate]     
       @internship_info = params[:applicant][:internship_info]
       @job_experience = params[:applicant][:job_experience]
       @total_exp_year =params[:applicant][:total_exp_year]
       @comment = params[:applicant][:comment]
-      @language = params[:applicant][:language]
-      @level = params[:applicant][:level]
       @programming = params[:applicant][:programming]
-      @correct_image_type = params[:applicant][:correct_image_type]
+     
+        @programming.each do |p|
+          @pro = " ";
+          @pro = @pro.to_s + (" "+p[:language] +"  :  " + p[:level] + ",").to_s
+        end
+        @program = @pro.delete_suffix(',')
+        
 
       params = ActionController::Parameters.new({
       obj:{
@@ -80,27 +80,21 @@ class ApplicantController < ApplicationController
         master_graduate_year: @master_graduate_year,
         master_degree:@master_degree,
         deploma_name:@deploma_name,
-        certificate:@certificate,
-        english:@english,
-        japan:@japan,
-        other:@other,
+        certificate:@certificate,      
         internship_info:@internship_info,
         job_experience:@job_experience,
         total_exp_year:@total_exp_year,
         comment:@comment,
-        programming:@programming,
-        language:@language,
-        level:@level,
-        correct_image_type:@correct_image_type
-    
+        programming:@program
+          
       }
         })
-        params.require(:obj).permit(:name,:profile_photo,:dob,:phone_no1,:phone_no2,:email,:currnet_address,:hometown_address,:bachelor_university,:bachelor_year,:bachelor_degree,:master_university,:master_graduate_year,:master_degree,:deploma_name,:certificate,:language,:english,:japan,:other,:internship_info,:job_experience,:total_exp_year,:comment,:programming,:language,:level,:correct_image_type)
+        params.require(:obj).permit(:name,:profile_photo,:dob,:phone_no1,:phone_no2,:email,:currnet_address,:hometown_address,:bachelor_university,:bachelor_year,:bachelor_degree,:master_university,:master_graduate_year,:master_degree,:deploma_name,:certificate,:internship_info,:job_experience,:total_exp_year,:comment,:programming)
     end
 
   private
   def save_params
-    params.require(:applicant).permit(:profile_photo,:dob,:phone_no1,:phone_no2,:email,:currnet_address,:hometown_address,:bachelor_university,:bachelor_year,:bachelor_degree,:master_university,:master_graduate_year,:master_degree,:deploma_name,:certificate,:language,:english,:japan,:other,:internship_info,:job_experience,:total_exp_year,:comment,:programming,:language,:level,:correct_image_type)
+    params.require(:applicant).permit(:name,:profile_photo,:dob,:phone_no1,:phone_no2,:email,:currnet_address,:hometown_address,:bachelor_university,:bachelor_year,:bachelor_degree,:master_university,:master_graduate_year,:master_degree,:deploma_name,:certificate,:internship_info,:job_experience,:total_exp_year,:comment,:programming)
   end
 
 end

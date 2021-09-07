@@ -90,6 +90,7 @@ td {
     border: 1px solid #cccccc;
     font-family: 'Meiryo-R';
     height: 25px;
+    font-size: 20px;
 }
 
 .upt-btn {
@@ -117,6 +118,11 @@ td {
 .ph {
     border: 1px solid #cccccc;
     padding-bottom: 5px;
+}
+
+.ph::after .img {
+    width: 10px;
+    height: 10px;
 }
 
 .data_phone {

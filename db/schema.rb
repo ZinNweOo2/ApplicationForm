@@ -10,77 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_06_171332) do
-
-  create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "record_type", null: false
-    t.bigint "record_id", null: false
-    t.bigint "blob_id", null: false
-    t.datetime "created_at", null: false
-    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
-    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
-  end
-
-  create_table "active_storage_blobs", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "key", null: false
-    t.string "filename", null: false
-    t.string "content_type"
-    t.text "metadata"
-    t.string "service_name", null: false
-    t.bigint "byte_size", null: false
-    t.string "checksum", null: false
-    t.datetime "created_at", null: false
-    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
-  end
-
-  create_table "active_storage_variant_records", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "blob_id", null: false
-    t.string "variation_digest", null: false
-    t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
-  end
+ActiveRecord::Schema.define(version: 2021_09_07_160623) do
 
   create_table "applicants", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
-    t.date "apply_date"
-    t.integer "blacklist_status"
     t.string "profile_photo"
-    t.string "correct_image_type"
-    t.integer "total_exp_year"
-    t.text "comment"
-    t.integer "status"
     t.date "dob"
     t.string "phone_no1"
     t.string "phone_no2"
+    t.string "email"
     t.string "currnet_address"
     t.string "hometown_address"
-    t.string "email"
-    t.string "university"
     t.string "bachelor_university"
     t.string "bachelor_year"
     t.string "bachelor_degree"
-    t.string "degree"
-    t.string "graduated_year"
+    t.string "master_university"
+    t.string "master_graduate_year"
+    t.string "master_degree"
+    t.string "deploma_name"
     t.string "certificate"
     t.text "internship_info"
     t.integer "is_exist_job_exp"
     t.text "job_experience"
     t.text "language_skills"
     t.text "career_skills"
-    t.string "deploma_name"
-    t.string "master_university"
-    t.string "master_degree"
-    t.string "master_graduate_year"
-    t.string "english"
-    t.string "japan"
-    t.string "other"
     t.string "programming"
-    t.string "language"
-    t.string "level"
+    t.integer "total_exp_year"
+    t.text "comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
 end
