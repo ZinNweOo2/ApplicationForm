@@ -10,16 +10,15 @@
             <tr>
                 <th>
                     <%= form.label :name, "Name",class:"name"%>                   
-                        <span class="err-msg">**</span>
-                       
+                        <span class="err-msg">**</span>                       
                 </th>
                 <td>
-                    <%= form.text_field :name, class: "name-txt" %>
-                        <% if @applicant.errors[:name].any? %>
+                <% if @applicant.errors[:name].any? %>
                             <div class="err-msg">*Name
                                 <%= @applicant.errors[:name][0] %>
                             </div>
                         <% end %>
+                    <%= form.text_field :name, class: "name-txt" %>                       
                 </td>
             </tr>
             <tr>
@@ -27,14 +26,12 @@
                     <%= form.label :profile_picture, "Profile Picture" ,class:"name"%>
                 </th>
                 <td>
+                    <% if @applicant.errors[:profile_photo].any? %>                      
+                    <% end %>
                     <div class=" upt-btn">
                         <%= form.file_field :profile_photo %>
                     </div>
-                    <% if @applicant.errors[:profile_photo].any? %>
-                        <div class="err-msg">* Your Profile
-                            <%= @applicant.errors[:profile_photo][0] %>
-                        </div>
-                    <% end %>
+                   
                 </td>
             </tr>
             <tr>
@@ -42,30 +39,36 @@
                     <%= form.label :dob, "Date Of Birth" ,class:"name"%>
                         <span class="err-msg">**</span>
 
-                </th>
+                  </th>
                 <td>
-                    <%= form.date_field :dob,class:"dob" %>
-                        <% if @applicant.errors[:dob].any? %>
+                <% if @applicant.errors[:dob].any? %>
                             <div class="err-msg">Birthday
                                 <%= @applicant.errors[:dob][0] %>
                             </div>
                         <% end %>
+                    <%= form.date_field :dob,class:"dob" %>                       
                 </td>
             </tr>
             <tr>
                 <th>
                     <%= form.label :phone1, "Phone" ,class:"name"%>
                         <span class="err-msg">**</span>
-
                 </th>
-                <td class="phone">
-                    <%= form.text_field :phone_no1,class:"ph"%>
-                        <i class="material-icons pls">&#xe548;</i>                      
-                        <% if @applicant.errors[:phone_no1].any? %>
+                <td class="phone">  
+                <% if @applicant.errors[:phone_no1].any? %>
                             <div class="err-msg">*Your Phone
                                 <%= @applicant.errors[:phone_no1][0] %>
                             </div>
-                        <% end %>
+                        <% end %>     
+                    <ul>    
+                        <li class="ph-pos">    
+                            <%= form.text_field :phone_no1,class:"ph"%>
+                        </li>
+                        <li>
+                            <i class="material-icons pls">&#xe548;</i>   
+                        </li>   
+                    </ul> 
+                                                                                
                 </td>
             </tr>
             <tr>
@@ -74,12 +77,13 @@
                         <span class="err-msg">**</span>
                 </th>
                 <td>
-                    <%= form.email_field :email, class: 'name-txt'%>
                         <% if @applicant.errors[:email].any? %>
                             <div class="err-msg"> Email
                                 <%= @applicant.errors[:email][0] %>
                             </div>
                         <% end %>
+                    <%= form.email_field :email, class: 'name-txt'%>
+
                 </td>
             </tr>
             <tr>
@@ -88,12 +92,13 @@
                         <span class="err-msg">**</span>
                 </th>
                 <td>
-                    <%= form.text_area :currnet_address, class:'add-txt'%>
                         <% if @applicant.errors[:currnet_address].any? %>
                             <div class="err-msg"> Your current address
                                 <%= @applicant.errors[:currnet_address][0] %>
                             </div>
                         <% end %>
+                    <%= form.text_area :currnet_address, class:'add-txt'%>
+
                 </td>
             </tr>
             <tr>
@@ -280,68 +285,59 @@
         <div class="ttl clearFix">
             <h3>Experience</h3>
         </div>
-            <table>
-            <tr>
-                <th>
-                    <%= form.label :job_exp, "Has job Experience" %>
-                </th>
-                <td>
-                    <%= form.check_box :job_exp, class:"job"%>
-                </td>
-            </tr>           
-            <tr class="chk">
-                <th>
-                    <%= form.label :internship_info, "Internship Info",class:"chk1"%>
-                </th>
-                <td>
-                    <%= form.text_area :internship_info, class: 'add-txt' %>
-                        <% if @applicant.errors[:internship_info].any? %>
-                            <div class="err-msg">Internship Info
-                                <%= @applicant.errors[:internship_info][0] %>
-                            </div>
-                        <% end %>
-                </td>
-            </tr>
-            <tr class="chk">
-                <th>
-                    <%= form.label :exp, "Job Experience" %>
-                </th>
-                <td>
-                    <%= form.text_area :job_experience, class: 'add-txt' %>
-                        <% if @applicant.errors[:job_experience].any? %>
-                            <div class="err-msg">
-                                <%= @applicant.errors[:job_experience][0] %>
-                            </div>
-                        <% end %>
-                </td>
-            </tr>
-            <tr class="chk">
-                <th>
-                    <%= form.label :exp_year, "Total Experience Year"%>
-                </th>
-                <td>
-                    <%= form.text_field :total_exp_year, class: 'name-txt' %>
-                        <% if @applicant.errors[:total_exp_year].any? %>
-                            <div class="err-msg">Year
-                                <%= @applicant.errors[:total_exp_year][0] %>
-                            </div>
-                        <% end %>
-                </td>
-            </tr>
-            <tr class="chk">
-                <th class="cmt">
-                    <%= form.label :cmt, "Comment" ,class:"name"%>
-                </th>
-                <td>
-                    <%= form.text_area :comment, class: 'add-txt' %>
-                        <% if @applicant.errors[:comment].any? %>
-                            <div class="err-msg">
-                                <%= @applicant.errors[:comment][0] %>
-                            </div>
-                        <% end %>
-                </td>
-            </tr>
-        </table>       
+            <div class="chk-box clearFix">
+                <div class="left-side">
+                    <%= form.label :is_exist_job_exp, "Has job Experience" %>
+                </div>
+                <div class="right-side">
+                    <%= form.check_box :is_exist_job_exp, class:"job"%>
+                </div>
+            </div>
+            <div class ="tbl clearFix">
+              <table>
+                <tr class="chk">
+                    <th>
+                        <%= form.label :internship_info, "Internship Info",class:"chk1"%>
+                    </th>
+                    <td>
+                        <%= form.text_area :internship_info, class: 'add-txt' %>
+                            <% if @applicant.errors[:internship_info].any? %>
+                                <div class="err-msg">Internship Info
+                                    <%= @applicant.errors[:internship_info][0] %>
+                                </div>
+                            <% end %>
+                    </td>
+                </tr>
+                
+                <tr class="chk">
+                    <th>
+                        <%= form.label :exp, "Job Experience" %>
+                    </th>
+                    <td>
+                        <%= form.text_area :job_experience, class: 'add-txt' %>
+                            <% if @applicant.errors[:job_experience].any? %>
+                                <div class="err-msg">
+                                    <%= @applicant.errors[:job_experience][0] %>
+                                </div>
+                            <% end %>
+                    </td>
+                </tr>
+                 <tr class="chk">
+                    <th>
+                        <%= form.label :exp_year, "Total Experience Year"%>
+                    </th>
+                    <td>
+                        <%= form.text_field :total_exp_year, type:"number", class: 'name-txt',value:"0" %>
+                            <% if @applicant.errors[:total_exp_year].any? %>
+                                <div class="err-msg">Year
+                                    <%= @applicant.errors[:total_exp_year][0] %>
+                                </div>
+                            <% end %>
+                    </td>
+              </table>
+            </div>
+           
+            
         <%= link_to '<button type="button" class="reset">Reset</button>'.html_safe,form_path %>
         <%= form.submit "Submit", class:"submit"%>
     <% end %>

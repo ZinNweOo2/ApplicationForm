@@ -1,5 +1,4 @@
 class ApplicantRepository
-      # @return [<Type>] <users>
     class << self
 
       def saveObjs(applicant)

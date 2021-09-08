@@ -20,13 +20,14 @@ class Applicants < ActiveRecord::Migration[6.1]
       t.text :internship_info
       t.integer :is_exist_job_exp
       t.text :job_experience
-      t.text :language_skills
+      t.string :english
+      t.string :japan
+      t.string :other
       t.text :career_skills
       t.string :programming  
       t.integer :total_exp_year
       t.text :comment
       
-  
       t.timestamps
     end
   end

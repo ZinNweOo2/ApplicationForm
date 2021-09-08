@@ -1,23 +1,27 @@
-<div class="content clearfix">
-    <div class="header clearFix">
-            <h2>Your CV Form</h2>
-    </div>
-    <div class="ttl clearFix">
-        <h3>Personal Information</h3>
-    </div>
+<div class="confirm clearFix">
+     <h2>Check & Confirm Your CV form</h2>
+</div>
   <%= form_with model: @applicant, url: save_applicant_index_path(@applicant),class:"main-form" do |form| %>
+    <div class="content clearfix">  
        <table>
             <tr class="col" >
                 <th class="col">
                     <%= form.label :name, "Name",class:"name"%>                  
                 </th>
                 <td class="col">
-                    <img src="/path">
-                    <%= @file_path %>  
+                  
                     <p class="cv-form"> <%= form.text_field :name, value: @applicant[:name], class: "cv-bdr name-txt", :readonly => true %></p>    
                 </td>
             </tr>
-       
+            <tr class="col" >
+                <th class="col">
+                    <%= form.label :profile_photo, "Profile Photo",class:"name"%>                  
+                </th>
+                <td class="col">
+                    <%= image_tag @profile_photo = @file_path, class:"img"%>
+                     <%= form.text_field :profile_photo, value: @file_path, class: "profile_name"%>
+                </td>
+            </tr>    
             <tr class="col">
                 <th class="col">
                     <%= form.label :dob, "Date Of Birth" ,class:"name "%>
@@ -30,13 +34,19 @@
             </tr>
             <tr class="col">
                 <th class="col">
-                    <%= form.label :phone1, "Phone" ,class:"name"%>
+                    <%= form.label :phone1, "Phone-no1" ,class:"name"%>                    
+                </th>
+                <td class="phone col">
+                 <p class="cv-form"> <span> </span><%= form.text_field :phone_no1, value: @applicant[:phone_no1], class: "cv-bdr ph-txt", :readonly => true %></p>
+                </td>
+            </tr>
+             <tr class="col">
+                <th class="col">
+                    <%= form.label :phone2, "Phone-no2" ,class:"name"%>
                      
                 </th>
                 <td class="phone col">
-                 <p class="cv-form"> <%= form.text_field :phone_no1, value: @applicant[:phone_no1], class: "cv-bdr name-txt", :readonly => true %></p>
-                 <p class="cv-form"> <%= form.text_field :phone_no1, value: @applicant[:phone_no2], class: "cv-bdr name-txt", :readonly => true %></p>
-
+                 <p class="cv-form"> <span> <%= form.text_field :phone_no2, value: @applicant[:phone_no2], class: "cv-bdr ph-txt", :readonly => true %></p>
                 </td>
             </tr>
             <tr class="col">
@@ -64,19 +74,54 @@
                  <p class="cv-form"> <%= form.text_field :hometown_address, value: @applicant[:hometown_address], class: "cv-bdr add-txt name-txt", :readonly => true %></p>
                 </td>
             </tr>
-        </table>
-         <div class="ttl clearFix">
-            <h3>Education Background</h3>
-        </div>
-        <table>
             <tr class="col">
                 <th class="col">
-                    <%= form.label :edu_lbl, "Education Level" ,class:"name"%>                       
+                    <%= form.label :uni, "Bachelor University" ,class:"name"%>                       
                 </th>
-                <td class="col">                  
+                <td class="col">                                 
                     <p class="cv-form"><%= form.text_field :bachelor_university, value: @applicant[:bachelor_university], class: "cv-bdr name-txt", :readonly => true %></p>
+                </td>
+            </tr>
+            <tr class="col">
+                <th class="col">
+                    <%= form.label :uni, "Bachelor Year" ,class:"name"%>                       
+                </th>
+                <td class="col">                                   
                     <p class="cv-form"> <%= form.text_field :bachelor_year, value: @applicant[:bachelor_year], class: "cv-bdr name-txt", :readonly => true %></p>
-                    <p class="cv-form"> <%= form.text_field :bachelor_degree, value: @applicant[:bachelor_degree], class: "cv-bdr name-txt", :readonly => true %></p>                     
+                </td>
+            </tr>
+             <tr class="col">
+                <th class="col">
+                    <%= form.label :uni, "Bachelor Degree" ,class:"name"%>                       
+                </th>
+                <td class="col">                                 
+                    <p class="cv-form"> <%= form.text_field :bachelor_degree, value: @applicant[:bachelor_degree], class: "cv-bdr name-txt", :readonly => true %></p>  
+
+                </td>
+            </tr>
+             <tr class="col">
+                <th class="col">
+                    <%= form.label :uni, "Master University" ,class:"name"%>                       
+                </th>
+                <td class="col">                                 
+                    <p class="cv-form"><%= form.text_field :master_university, value: @applicant[:master_university], class: "cv-bdr name-txt", :readonly => true %></p>
+                </td>
+            </tr>
+            <tr class="col">
+                <th class="col">
+                    <%= form.label :uni, "Master Year" ,class:"name"%>                       
+                </th>
+                <td class="col">                                   
+                    <p class="cv-form"> <%= form.text_field :master_graduate_year, value: @applicant[:master_graduate_year], class: "cv-bdr name-txt", :readonly => true %></p>
+                </td>
+            </tr>
+             <tr class="col">
+                <th class="col">
+                    <%= form.label :uni, "Master Degree" ,class:"name"%>                       
+                </th>
+                <td class="col">                                 
+                    <p class="cv-form"> <%= form.text_field :master_degree, value: @applicant[:master_degree], class: "cv-bdr name-txt", :readonly => true %></p>  
+
                 </td>
             </tr>
              <tr class="col">
@@ -100,24 +145,33 @@
                     <%= form.label :program_skill, "Programming Skills" ,class:"name"%>                   
                 </th>
                 <td class="col">
-                   <p class="cv-form bch"><%= form.text_field "programming[][language]", value: @applicant[:programming], class: "cv-bdr name-txt", :readonly => true %></p>                          
+                   <p class="cv-form bch"><%= form.text_field :programming, value: @applicant[:programming], class: "cv-bdr name-txt", :readonly => true %></p>     
                 </td>
             </tr>
                <tr class="col">
                 <th class="col">
-                    <%= form.label :language_skill, "Language Skills" ,class:"name"%>                   
+                    <%= form.label :e_skill, "English Skill" ,class:"name"%>                   
                 </th>
                 <td class="col">
-                 <p class="cv-form bch"><span>English Skill: </span><%= form.text_field :english, value: @applicant[:english], class: "cv-bdr name-txt", :readonly => true %></p>
-                 <p class="cv-form bch"><span>Japan Skill: </span><%= form.text_field :japan, value: @applicant[:japan], class: "cv-bdr name-txt", :readonly => true %></p>
-                 <p class="cv-form bch"><span>Other Skill: </span><%= form.text_field :other, value: @applicant[:other], class: "cv-bdr name-txt", :readonly => true %></p>
+                 <p class="cv-form bch"><%= form.text_field :english, value: @applicant[:english], class: "cv-bdr  ph-txt", :readonly => true %></p>
                 </td>
             </tr>
-        </table>
-        <div class="ttl clearFix">
-            <h3>Experience</h3>
-        </div>
-         <table>
+            <tr class="col">
+                <th class="col">
+                    <%= form.label :japan_skill, "Japan Skill" ,class:"name"%>                   
+                </th>
+                <td class="col">
+                 <p class="cv-form bch"><%= form.text_field :japan, value: @applicant[:japan], class: "cv-bdr ph-txt ", :readonly => true %></p>
+                </td>
+            </tr>
+            <tr class="col">
+                <th class="col">
+                    <%= form.label :other_skill, "Other Skills" ,class:"name"%>                   
+                </th>
+                <td class="col">
+                 <p class="cv-form bch"><%= form.text_field :other, value: @applicant[:other], class: "cv-bdr ph-txt ", :readonly => true %></p>
+                </td>
+            </tr>
            <tr class="col">
                 <th class="col">
                     <%= form.label :internship_info, "Internship Info" ,class:"name"%>                   
@@ -142,20 +196,13 @@
                  <p class="cv-form"> <%= form.text_field :total_exp_year, value: @applicant[:total_exp_year], class: "cv-bdr name-txt ", :readonly => true %></p>
                 </td>
             </tr>
-            <tr class="col">
-                <th class="col">
-                    <%= form.label :comment, "Comment" ,class:"name"%>                   
-                </th>
-                <td class="col">
-                 <p class="cv-form"> <%= form.text_field :comment, value: @applicant[:comment], class: "cv-bdr add-txt name-txt", :readonly => true %></p>
-                </td>
-            </tr>
-        </table>
-        <div class=" clearFix">
+        </table>      
+    </div>
+     <div class="confirm-btn clearFix">
             <%= link_to '<button type="button" class="reset">Cancle</button>'.html_safe, form_path %>
             <%= form.submit "Submit", class:"submit"%>
         </div>
   <% end %>
-</div>
+
 
 

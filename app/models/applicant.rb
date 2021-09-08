@@ -3,7 +3,7 @@ class Applicant < ApplicationRecord
     validates :profile_photo, presence:true
     validates :dob, presence:true
     validates :phone_no1, presence:true, :numericality => true,:length => {:minimum=>6, :maximum => 12 }
-    # validates :phone_no2, :length => {:minimum=>0, :maximum => 12 }
+    validates :phone_no2, length: {maximum: 12}
     validates :email, presence:true, uniqueness:true, length:{ in:10..100 } ,format: { with: /.*@.*/}
     validates :currnet_address, presence:true, length: {maximum: 250 }
     validates :hometown_address, length: {maximum: 250}
@@ -15,7 +15,7 @@ class Applicant < ApplicationRecord
     validates :master_degree, length: {maximum: 100}
     validates :deploma_name, length: {maximum: 100}
     validates :certificate, length: {maximum: 255}
-    validates :total_exp_year, length: {maximum: 3}  
+    validates :total_exp_year, :numericality => true, length: {maximum: 3}  
     
     #DOB Validatation
     validate :validate_age

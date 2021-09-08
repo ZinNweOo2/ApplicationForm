@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_07_160623) do
+ActiveRecord::Schema.define(version: 2021_09_08_172909) do
 
   create_table "applicants", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -32,7 +32,9 @@ ActiveRecord::Schema.define(version: 2021_09_07_160623) do
     t.text "internship_info"
     t.integer "is_exist_job_exp"
     t.text "job_experience"
-    t.text "language_skills"
+    t.string "english"
+    t.string "japan"
+    t.string "other"
     t.text "career_skills"
     t.string "programming"
     t.integer "total_exp_year"
