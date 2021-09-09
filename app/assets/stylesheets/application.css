@@ -321,7 +321,7 @@ li {
 
 .left-side {
     float: left;
-    width: 28.7%;
+    width: 38.5%;
     background-color: #f3f3f3;
     padding: 3px 0 3px 7px;
     font-family: 'Meiryo-R';
@@ -334,19 +334,14 @@ li {
     width: 60%;
 }
 
-.lbl {
-    float: left;
-    width: 39%;
-}
-
 .chk-box {
-    width: 100%;
+    margin: 0 auto;
+    width: 1000px;
     margin-bottom: 5px;
     position: absolute;
     font-family: 'Meiryo-R';
     font-size: 16px;
     margin-bottom: 20px;
-    margin: 0 auto;
 }
 
 .chk {
