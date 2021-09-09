@@ -2,13 +2,14 @@ Rails.application.routes.draw do
     get 'applicant/form'
     get 'confirm', to: "applicant#confirm"
     get 'form' , to: "applicant#form"
+    get 'confirm', to:"applicant#confirmForm"
     root 'applicant#form'
   
-    resources :applicant, only: [:index,:show,:destroy] do
+    resources :applicant, only: [:index,:destroy] do
       collection do
-        get :_form, to: "applicant#form"
         post :confirm    
         post :save
+        get 'confirm', to:"applicant#confirmForm"
       end
     end
   

@@ -22,6 +22,9 @@
                 </td>
             </tr>
             <tr>
+             <%if notice %>
+                <%=render 'layouts/alert'%>
+             <% end %>
                 <th>
                     <%= form.label :profile_picture, "Profile Picture" ,class:"name"%>
                 </th>
@@ -60,7 +63,7 @@
                                 <%= @applicant.errors[:phone_no1][0] %>
                             </div>
                         <% end %>     
-                    <ul>    
+                    <ul class="ph-flex">    
                         <li class="ph-pos">    
                             <%= form.text_field :phone_no1,class:"ph"%>
                         </li>
@@ -130,7 +133,7 @@
                                     <%= form.text_field :bachelor_university,class:"uni" %>
                                         <% if @applicant.errors[:bachelor_university].any? %>
                                             <div class="err-msg"> 
-                                                <%= @applicant.errors[:bachelor_university][0] %>
+                                               Your Text <%= @applicant.errors[:bachelor_university][0] %>
                                             </div>
                                         <% end %>
                             </li>
@@ -148,7 +151,7 @@
                                     <%= form.text_field :bachelor_degree,class:"uni" %>
                                         <% if @applicant.errors[:bachelor_degree].any? %>
                                             <div class="err-msg">
-                                                <%= @applicant.errors[:bachelor_degree][0] %>
+                                               Degree <%= @applicant.errors[:bachelor_degree][0] %>
                                             </div>
                                         <% end %>
                             </li>
@@ -186,7 +189,6 @@
                                                     <%= @applicant.errors[:master_degree][0] %>
                                                 </div>
                                             <% end %>
-
                                 </li>
                             </ul>
                         </div>
@@ -224,7 +226,7 @@
                 </th>
                 <td>
                     <div class="list">
-                        <ul>
+                        <ul class="pro-skill">
                             <li>
                                 <%= form.label :language, "Langage"%> <br>
                                     <%= form.text_field "programming[][language]",class:"lan" %>

@@ -14,7 +14,6 @@ class ApplicantController < ApplicationController
           is_exist_job_exp = 1
         else
           @is_exist_job_exp = 0
-          render plain: "error"
         end
         # render plain: form_params
         img_name = params[:applicant][:profile_photo].original_filename
@@ -26,12 +25,19 @@ class ApplicantController < ApplicationController
         if !File.extname(params[:applicant][:profile_photo]).eql?(".png")&&
           !File.extname(params[:applicant][:profile_photo]).eql?(".jpg")&&
           !File.extname(params[:applicant][:profile_photo]).eql?(".jpeg")
+
+          flash[:notice] ="*Profile Photo should be image type.*"
           render :form
         end
       else
         render :form
       end
       
+  end
+  def confirmForm
+    if !defined?(@applicant)
+      redirect_to root_path
+    end
   end
   
   def save
