@@ -34,14 +34,14 @@
     background-color: #6d9eeb;
     padding: 5px 0 5px 0;
     margin-bottom: 1px;
-    font-family: 'Meiryo-R';
+    font-family: "Meiryo-R";
 }
 
 .header h2 {
     color: #ffffff;
     font-size: 17px;
     text-align: center;
-    font-family: 'Meiryo-R';
+    font-family: "Meiryo-R";
     padding-bottom: 9px;
 }
 
@@ -49,7 +49,7 @@
     background-color: #fce5cd;
     padding: 1px 0 1px 7px;
     margin-bottom: 1px;
-    font-family: 'Meiryo-R';
+    font-family: "Meiryo-R";
 }
 
 .ttl h3 {
@@ -84,7 +84,7 @@ td {
 .name-txt {
     width: 591px;
     border: 1px solid #cccccc;
-    font-family: 'Meiryo-R';
+    font-family: "Meiryo-R";
     height: 25px;
     font-size: 17px;
 }
@@ -100,13 +100,13 @@ td {
     padding-right: 2px;
     margin-bottom: 2px;
     margin-top: 3px;
-    font-family: 'Meiryo-R';
+    font-family: "Meiryo-R";
     font-size: 18px;
 }
 
 .ph-txt {
     font-size: 17px;
-    font-family: 'Meiryo-R';
+    font-family: "Meiryo-R";
 }
 
 .ph {
@@ -139,7 +139,7 @@ td {
     border: 1px solid #cccccc;
     resize: none;
     font-size: 17px;
-    font-family: 'Meiryo-R';
+    font-family: "Meiryo-R";
 }
 
 .profile_name {
@@ -182,7 +182,7 @@ li {
     border: 2px solid #cccccc;
     padding-bottom: 5px;
     font-size: 17px;
-    font-family: 'Meiryo-R';
+    font-family: "Meiryo-R";
 }
 
 .bdr1 {
@@ -210,7 +210,7 @@ li {
     margin-bottom: 1px;
     color: #444444;
     font-size: 17px;
-    font-family: 'Meiryo-R';
+    font-family: "Meiryo-R";
     /* margin-left: 1px; */
 }
 
@@ -221,7 +221,7 @@ li {
     color: #444444;
     margin-bottom: 1px;
     font-size: 17px;
-    font-family: 'Meiryo-R';
+    font-family: "Meiryo-R";
 }
 
 .lvl1 {
@@ -232,7 +232,7 @@ li {
     margin-bottom: 1px;
     margin-left: 2px;
     font-size: 17px;
-    font-family: 'Meiryo-R';
+    font-family: "Meiryo-R";
 }
 
 .sub {
@@ -252,7 +252,7 @@ li {
     margin-top: -18px;
     position: absolute;
     font-size: 17px;
-    font-family: 'Meiryo-R';
+    font-family: "Meiryo-R";
 }
 
 .skill1 {
@@ -351,7 +351,7 @@ li {
     width: 38.5%;
     background-color: #f3f3f3;
     padding: 3px 0 3px 7px;
-    font-family: 'Meiryo-R';
+    font-family: "Meiryo-R";
     font-size: 16px;
     color: #444444;
     margin-left: 3px;
@@ -400,7 +400,7 @@ li {
 .content-cv {
     width: 1000px;
     margin: 0 auto;
-    font-family: 'Meiryo-R';
+    font-family: "Meiryo-R";
 }
 
 span {
@@ -413,7 +413,7 @@ span {
 }
 
 .cv-form {
-    font-family: 'Meiryo-R';
+    font-family: "Meiryo-R";
     font-size: 17px;
     padding-left: 10px;
 }
@@ -421,7 +421,7 @@ span {
 .edu-cv {
     margin-top: 10px;
     font-size: 17px;
-    font-family: 'Meiryo-R';
+    font-family: "Meiryo-R";
     font-weight: bold;
     padding-left: 80px;
     margin-bottom: 10px;
@@ -429,14 +429,14 @@ span {
 }
 
 .bch {
-    font-family: 'Meiryo-R';
+    font-family: "Meiryo-R";
     font-size: 17px;
 }
 
 .info {
     font-size: 17px;
     font-weight: bold;
-    font-family: 'Meiryo-R';
+    font-family: "Meiryo-R";
     padding-left: 90px;
     color: rgb(82, 53, 42);
 }
@@ -444,7 +444,7 @@ span {
 .exp {
     padding-left: 100px;
     font-size: 16px;
-    font-family: 'Meiryo-R';
+    font-family: "Meiryo-R";
 }
 
 .cv-btn {
@@ -483,11 +483,11 @@ span {
     color: #6d9eeb;
     text-align: center;
     font-size: 25px;
-    font-family: 'Meiryo-R';
+    font-family: "Meiryo-R";
 }
 
 .confirm-btn {
     width: 1000px;
     margin: 0 auto;
-    font-family: 'Meiryo-R';
+    font-family: "Meiryo-R";
 }

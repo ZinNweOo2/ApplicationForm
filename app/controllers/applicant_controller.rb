@@ -31,8 +31,7 @@ class ApplicantController < ApplicationController
         end
       else
         render :form
-      end
-      
+      end     
   end
   def confirmForm
     if !defined?(@applicant)

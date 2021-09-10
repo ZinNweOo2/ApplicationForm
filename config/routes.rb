@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
     get 'applicant/form'
-    get 'confirm', to: "applicant#confirm"
     get 'form' , to: "applicant#form"
-    get 'confirm', to:"applicant#confirmForm"
     root 'applicant#form'
   
     resources :applicant, only: [:index,:destroy] do

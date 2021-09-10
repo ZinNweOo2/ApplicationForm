@@ -1,52 +1,58 @@
 <div class="confirm clearFix">
-     <h2>Check & Confirm Your CV form</h2>
+    <h2>Check & Confirm Your CV form</h2>
 </div>
-  <%= form_with model: @applicant, url: save_applicant_index_path(@applicant),class:"main-form" do |form| %>
-    <div class="content clearfix">  
-       <table>
-            <tr class="col" >
+<%= form_with model: @applicant, url: save_applicant_index_path(@applicant),class:"main-form" do |form| %>
+    <div class="content clearfix">
+        <table>
+            <tr class="col">
                 <th class="col">
-                    <%= form.label :name, "Name",class:"name"%>                  
+                    <%= form.label :name, "Name",class:"name"%>
                 </th>
                 <td class="col">
-                  
-                    <p class="cv-form"> <%= form.text_field :name, value: @applicant[:name], class: "cv-bdr name-txt", :readonly => true %></p>    
+
+                    <p class="cv-form">
+                        <%= form.text_field :name, value: @applicant[:name], class: "cv-bdr name-txt", :readonly => true %>
+                    </p>
                 </td>
             </tr>
-            <tr class="col" >
+            <tr class="col">
                 <th class="col">
-                    <%= form.label :profile_photo, "Profile Photo",class:"name"%>                  
+                    <%= form.label :profile_photo, "Profile Photo",class:"name"%>
                 </th>
                 <td class="col">
                     <%= image_tag @profile_photo = @file_path, class:"img"%>
-                     <%= form.text_field :profile_photo, value: @file_path, class: "profile_name"%>
+                        <%= form.text_field :profile_photo, value: @file_path, class: "profile_name"%>
                 </td>
-            </tr>    
+            </tr>
             <tr class="col">
                 <th class="col">
                     <%= form.label :dob, "Date Of Birth" ,class:"name "%>
-                    
+
                 </th>
                 <td class="col">
-                   <p class="cv-form"><%= form.text_field :dob, value: @applicant[:dob], class: "cv-bdr name-txt", :readonly => true %></p>  
-                        
+                    <p class="cv-form">
+                        <%= form.text_field :dob, value: @applicant[:dob], class: "cv-bdr name-txt", :readonly => true %>
+                    </p>
+
                 </td>
             </tr>
             <tr class="col">
                 <th class="col">
-                    <%= form.label :phone1, "Phone-no1" ,class:"name"%>                    
+                    <%= form.label :phone1, "Phone-no1" ,class:"name"%>
                 </th>
                 <td class="phone col">
-                 <p class="cv-form"> <span> </span><%= form.text_field :phone_no1, value: @applicant[:phone_no1], class: "cv-bdr ph-txt", :readonly => true %></p>
+                    <p class="cv-form"> <span> </span>
+                        <%= form.text_field :phone_no1, value: @applicant[:phone_no1], class: "cv-bdr ph-txt", :readonly => true %>
+                    </p>
                 </td>
             </tr>
-             <tr class="col">
+            <tr class="col">
                 <th class="col">
                     <%= form.label :phone2, "Phone-no2" ,class:"name"%>
-                     
+
                 </th>
                 <td class="phone col">
-                 <p class="cv-form"> <span> <%= form.text_field :phone_no2, value: @applicant[:phone_no2], class: "cv-bdr ph-txt", :readonly => true %></p>
+                    <p class="cv-form"> <span> <%= form.text_field :phone_no2, value: @applicant[:phone_no2], class: "cv-bdr ph-txt", :readonly => true %></p>
                 </td>
             </tr>
             <tr class="col">
@@ -199,10 +205,7 @@
         </table>      
     </div>
      <div class="confirm-btn clearFix">
-            <%= link_to '<button type="button" class="reset">Cancle</button>'.html_safe, form_path %>
+            <%= link_to '<button type="button" class="reset">Cancle</button>'.html_safe, root_path(@applicant) %>
             <%= form.submit "Submit", class:"submit"%>
         </div>
   <% end %>
-
-
-
